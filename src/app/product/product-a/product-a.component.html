@@ -1,0 +1,29 @@
+<p>product-a works!</p>
+<button (click)="addProduct()">Add Product</button>
+<hr>
+<input type="text" #currency/>
+<button (click)="updateCurrency(currency.value)">Update Currency</button>
+<hr>
+<input type="text" #productToUpdate/>
+<button (click)="updateProduct(productToUpdate.value)">Update Product</button>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+
+<tr *ngFor="let product of productList">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td><button (click)="removeProduct(product.id)">delete</button></td>
+</tr>
+
+
+</tbody>
+</table>
